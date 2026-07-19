@@ -23,9 +23,9 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
       category: "AI & Web Development",
       year: "25",
       featured: true,
-      thumbnail: `${$}/District 11/District-11-—-Creative-Agency-Dubai-Branding-Marketing-Web-Design (2).webp`,
-      images: [`${$}/District 11/District-11-—-Creative-Agency-Dubai-Branding-Marketing-Web-Design (2).webp`],
-      externalUrl: "https://github.com/abhinavrenjithg-sys"
+      thumbnail: `${$}/ArchAI/ArchAI1.png`,
+      images: [`${$}/ArchAI/ArchAI1.png`, `${$}/ArchAI/ArchAI2.png`, `${$}/ArchAI/ArchAI3.png`, `${$}/ArchAI/ArchAI4.png`, `${$}/ArchAI/ArchAI5.png`, `${$}/ArchAI/ArchAI6.png`],
+      externalUrl: "https://ai.studio/apps/e1b78a68-11c9-4e60-945c-a96dd16878a5?fullscreenApplet=true"
     },
     {
       slug: "world-connected",
