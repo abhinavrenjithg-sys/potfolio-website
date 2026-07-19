@@ -48,6 +48,68 @@
     </script>
     <script type="module" crossorigin src="./assets/index-abhinav.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-abhinav.css">
+    <style>
+      /* ===== WORK DETAIL — IMAGE GALLERY GRID ===== */
+      .wd-gallery {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem !important;
+        margin-top: 2rem !important;
+      }
+      @media (max-width: 700px) {
+        .wd-gallery { grid-template-columns: 1fr !important; }
+      }
+      .wd-gallery-item {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--colors--card-border, #ffffff14);
+        background: #0f0f0f;
+      }
+      .wd-gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.5s cubic-bezier(.25,.46,.45,.94);
+      }
+      .wd-gallery-item:hover img {
+        transform: scale(1.04);
+      }
+
+      /* ===== LIVE LINK BUTTON ===== */
+      .wd-footer-nav {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--colors--card-border, #ffffff14);
+      }
+      .wd-live-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.75rem 1.5rem;
+        background: #c5f135;
+        color: #0a0a0a !important;
+        border-radius: 2.2rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        border: none;
+      }
+      .wd-live-link:hover {
+        background: #d4ff40;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px #c5f13540;
+      }
+      .wd-live-link svg {
+        width: 14px;
+        height: 14px;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
