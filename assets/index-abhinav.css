@@ -205,7 +205,41 @@ html {
   0% { transform: scale(1) translate(0, 0); opacity: 0.4; }
   50% { transform: scale(1.2) translate(4vw, 8vh); opacity: 0.75; }
   100% { transform: scale(1) translate(-4vw, -4vh); opacity: 0.4; }
+
+/* FEATURED & MORE WORKS PROJECT CARD SCROLL ANIMATION */
+.portfolio-image-wrap, .more-works-thumb {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease, border-color 0.5s ease !important;
 }
+
+.portfolio-card:hover .portfolio-image-wrap,
+.more-works-card:hover .more-works-thumb {
+  transform: translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.portfolio-img, .more-works-thumb img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease !important;
+}
+
+.portfolio-card:hover .portfolio-img,
+.more-works-card:hover .more-works-thumb img {
+  transform: scale(1.08) !important;
+  filter: brightness(1.1) contrast(1.05) !important;
+}
+
+.portfolio-title {
+  transition: color 0.35s ease, transform 0.35s ease !important;
+}
+
+.portfolio-card:hover .portfolio-title {
+  transform: translateX(4px) !important;
+  color: #ffffff !important;
+}
+
 
 
 
