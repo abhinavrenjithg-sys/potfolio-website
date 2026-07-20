@@ -48,6 +48,24 @@
     </script>
     <script type="module" crossorigin src="./assets/index-abhinav.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-abhinav.css">
+    <!-- Firebase App/Analytics SDK -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAMWTYcZmZ573AZqmleOwL0dQz-pxXUdO4",
+        authDomain: "abhinavpotfolio.firebaseapp.com",
+        projectId: "abhinavpotfolio",
+        storageBucket: "abhinavpotfolio.firebasestorage.app",
+        messagingSenderId: "143453693330",
+        appId: "1:143453693330:web:e9650ec20283c97b4a0d4b",
+        measurementId: "G-RPPSBM3DSN"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
     <style>
       /* ===== WORK DETAIL — IMAGE GALLERY GRID ===== */
       .wd-gallery {
