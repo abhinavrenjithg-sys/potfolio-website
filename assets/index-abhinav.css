@@ -175,6 +175,37 @@
   .hero-name-word {
     font-size: clamp(2.2rem, 9.5vw, 3.8rem) !important;
   }
+
+/* PREMIUM SCROLL ANIMATION & GLOW EFFECTS */
+html {
+  scroll-behavior: smooth !important;
 }
+
+.portfolio-card, .tool-item, .why-card, .svc-card-h, .exp-entry, .partner-tile {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.45s ease !important;
+  will-change: transform;
+}
+
+.portfolio-card:hover, .why-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 24px rgba(255, 255, 255, 0.08) !important;
+}
+
+.tool-item:hover {
+  transform: translateY(-4px) scale(1.03) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.blur-effect {
+  animation: scrollGlowPulse 12s infinite alternate ease-in-out !important;
+}
+
+@keyframes scrollGlowPulse {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.4; }
+  50% { transform: scale(1.2) translate(4vw, 8vh); opacity: 0.75; }
+  100% { transform: scale(1) translate(-4vw, -4vh); opacity: 0.4; }
+}
+
 
 
