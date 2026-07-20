@@ -77,21 +77,171 @@
       @media (max-width: 700px) {
         .wd-gallery { grid-template-columns: 1fr !important; }
       }
-      .wd-gallery-item {
+      .wd-gallery-item, .wd-hero-thumb-wrap {
+        cursor: pointer !important;
+        position: relative;
+      }
+      .wd-gallery-item::after {
+        content: '🔍 Click to expand';
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+        font-size: 0.75rem;
+        padding: 5px 12px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        backdrop-filter: blur(6px);
+      }
+      .wd-gallery-item:hover::after {
+        opacity: 1;
+      }
+
+      /* ===== HERO META & BADGES STYLING ===== */
+      .wd-hero-meta {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin-bottom: 1rem !important;
+      }
+      .wd-hero-cat {
+        display: inline-flex !important;
+        align-items: center !important;
+        padding: 6px 16px !important;
+        border-radius: 20px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.04em !important;
+        white-space: normal !important;
+        max-width: 100% !important;
+        word-break: break-word !important;
+      }
+      .wd-hero-year {
+        opacity: 0.7 !important;
+        font-size: 0.85rem !important;
+        font-weight: 500 !important;
+      }
+      .wd-about-hero-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 6px 18px !important;
+        border-radius: 20px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.04em !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        cursor: pointer !important;
+        transition: all 0.3s cubic-bezier(.25,.46,.45,.94) !important;
+      }
+      .wd-about-hero-btn:hover {
+        background: rgba(255, 255, 255, 0.28) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
+      }
+      .wd-live-hero-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 6px 18px !important;
+        border-radius: 20px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.04em !important;
+        background: rgba(34, 197, 94, 0.2) !important;
+        color: #4ade80 !important;
+        border: 1px solid rgba(34, 197, 94, 0.4) !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        transition: all 0.3s cubic-bezier(.25,.46,.45,.94) !important;
+      }
+      .wd-live-hero-btn:hover {
+        background: rgba(34, 197, 94, 0.35) !important;
+        border-color: rgba(34, 197, 94, 0.7) !important;
+        color: #ffffff !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3) !important;
+      }
+
+      /* ===== ABOUT & MODULE CARDS ENHANCEMENTS ===== */
+      .wd-about-block {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 2.5rem;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .wd-about-block:hover {
+        border-color: rgba(255, 255, 255, 0.16);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      }
+      .wd-feature-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 1.6rem;
+        transition: all 0.35s cubic-bezier(.25,.46,.45,.94);
+      }
+      .wd-feature-card:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Image Modal Lightbox */
+      .img-modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        background: rgba(0, 0, 0, 0.94);
+        backdrop-filter: blur(14px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        cursor: zoom-out;
+      }
+      .img-modal-img {
+        max-width: 96vw;
+        max-height: 92vh;
+        object-fit: contain;
         border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid var(--colors--card-border, #ffffff14);
-        background: #0f0f0f;
+        box-shadow: 0 24px 80px rgba(0,0,0,0.9);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        cursor: default;
       }
-      .wd-gallery-item img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-        transition: transform 0.5s cubic-bezier(.25,.46,.45,.94);
+      .img-modal-close {
+        position: absolute;
+        top: 24px;
+        right: 28px;
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        z-index: 1000000;
       }
-      .wd-gallery-item:hover img {
-        transform: scale(1.04);
+      .img-modal-close:hover {
+        background: rgba(255, 255, 255, 0.35);
+        transform: scale(1.1);
       }
 
       /* ===== LIVE LINK BUTTON ===== */
@@ -126,6 +276,102 @@
       .wd-live-link svg {
         width: 14px;
         height: 14px;
+      }
+
+      /* ===== MOBILE OPTIMIZATIONS (PHONE) ===== */
+      @media (max-width: 600px) {
+        /* Topbar adjustments */
+        .wd-topbar {
+          padding: 0 1rem !important;
+          gap: 0.75rem !important;
+        }
+        .wd-topbar-title {
+          font-size: 0.85rem !important;
+          white-space: nowrap !important;
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
+          max-width: 150px !important;
+        }
+        .wd-topbar-cat {
+          display: none !important; /* Hide category to save space */
+        }
+        .wd-back-btn {
+          padding: 6px 10px !important;
+          font-size: 0.8rem !important;
+        }
+
+        /* Hero adjustments */
+        .wd-hero {
+          min-height: 35vh !important;
+        }
+        .wd-hero-inner {
+          padding: 2.5rem 0 1.5rem !important;
+        }
+        .wd-hero-title {
+          font-size: 2.2rem !important;
+          line-height: 1.05 !important;
+        }
+        .wd-hero-cat {
+          font-size: 0.7rem !important;
+          padding: 3px 8px !important;
+        }
+
+        /* Content adjustments */
+        .wd-content {
+          padding: 2rem 0 3rem !important;
+        }
+        .wd-image-group {
+          margin-bottom: 2rem !important;
+        }
+        .wd-group-header {
+          margin-bottom: 1rem !important;
+          padding-bottom: 0.75rem !important;
+        }
+        .wd-group-label {
+          font-size: 0.9rem !important;
+        }
+
+        /* Video Section */
+        .wd-video-heading {
+          font-size: 1.1rem !important;
+          margin-bottom: 1rem !important;
+        }
+        .wd-video-label {
+          padding: 0.5rem 0.75rem !important;
+          font-size: 0.7rem !important;
+        }
+
+        /* Footer Nav buttons grid layout */
+        .wd-footer-nav {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr !important;
+          gap: 0.75rem !important;
+          margin-top: 2rem !important;
+          padding-top: 1.5rem !important;
+        }
+
+        .wd-back-btn--lg, .wd-live-link, .wd-contact-link {
+          height: 46px !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-family: var(--font--primary-font) !important;
+          font-size: 0.85rem !important;
+          border-radius: 2.2rem !important; /* Capsule buttons */
+          padding: 0 1rem !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        .wd-live-link {
+          grid-column: span 2 !important; /* Take full width on phone */
+        }
+        .wd-back-btn--lg {
+          grid-column: span 1 !important; /* Left column */
+        }
+        .wd-contact-link {
+          grid-column: span 1 !important; /* Right column */
+        }
       }
     </style>
   </head>

@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+let PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
 
 const MIME = {
@@ -45,7 +45,7 @@ function log(status, method, url, ms) {
   );
 }
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   const start = Date.now();
 
   // Strip query string and decode URI (handles spaces and special chars in filenames)
@@ -81,6 +81,20 @@ http.createServer((req, res) => {
     res.end(data);
     log(200, req.method, urlPath, ms);
   });
-}).listen(PORT, () => {
-  console.log(`\n  ${COLORS.green}✓${COLORS.reset} Server running at ${COLORS.cyan}http://localhost:${PORT}${COLORS.reset}\n`);
 });
+
+function startServer(port) {
+  server.listen(port, () => {
+    console.log(`\n  ${COLORS.green}✓${COLORS.reset} Server running at ${COLORS.cyan}http://localhost:${port}${COLORS.reset}\n`);
+  }).on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`${COLORS.gray}Port ${port} in use, trying ${port + 1}...${COLORS.reset}`);
+      startServer(port + 1);
+    } else {
+      console.error(err);
+    }
+  });
+}
+
+startServer(PORT);
+
