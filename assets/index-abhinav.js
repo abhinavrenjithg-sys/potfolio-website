@@ -166,94 +166,124 @@ Please change the parent <Route path="${e}"> to <Route path="${e === `/` ? `*` :
   }
 ], _h = gh.filter(e => e.featured), vh = [.25, .46, .45, .94], yh = { hidden: {}, show: { transition: { staggerChildren: .12, delayChildren: .06 } } }, bh = { hidden: { opacity: 0, scale: .88, y: 36 }, show: { opacity: 1, scale: 1, y: 0, transition: { type: `spring`, stiffness: 270, damping: 24 } } }, xh = () => (0, Y.jsx)(`section`, { id: `work`, className: `portfolio-section section-light`, children: (0, Y.jsxs)(`div`, { className: `container`, children: [(0, Y.jsxs)(Z.div, { style: { display: `flex`, justifyContent: `space-between`, alignItems: `center`, marginBottom: `2rem` }, initial: { opacity: 0, scale: .94, y: 18 }, whileInView: { opacity: 1, scale: 1, y: 0 }, viewport: { once: !0, amount: .4 }, transition: { type: `spring`, stiffness: 300, damping: 24 }, children: [(0, Y.jsxs)(`div`, { style: { display: `flex`, alignItems: `center`, gap: `8px` }, children: [(0, Y.jsx)(`span`, { className: `section-accent-dot`, children: `✦` }), (0, Y.jsx)(`span`, { className: `top-text`, children: `Highlighted Work` })] }), (0, Y.jsx)(`div`, { className: `top-text gray`, children: `Edition 03` })] }), (0, Y.jsx)(Z.div, { initial: { opacity: 0, scale: .9, y: 26 }, whileInView: { opacity: 1, scale: 1, y: 0 }, viewport: { once: !0, amount: .4 }, transition: { type: `spring`, stiffness: 280, damping: 24, delay: .06 }, className: `margin-30`, children: (0, Y.jsx)(`h2`, { className: `h2`, style: { fontSize: `clamp(2rem, 5vw, 4rem)`, textTransform: `uppercase`, letterSpacing: `-0.03em` }, children: `Featured Works Project` }) }), (0, Y.jsx)(Z.div, { className: `portfolio-grid`, variants: yh, initial: `hidden`, whileInView: `show`, viewport: { once: !0, amount: .1 }, children: _h.map((e, t) => { let n = (0, Y.jsxs)(Y.Fragment, { children: [(0, Y.jsxs)(`div`, { className: `portfolio-image-wrap`, children: [(0, Y.jsx)(Z.img, { src: e.thumbnail, alt: e.title, className: `portfolio-img`, whileHover: { scale: 1.06, transition: { duration: .5, ease: vh } } }), (0, Y.jsx)(`div`, { className: `portfolio-overlay` }), (0, Y.jsxs)(`div`, { className: `portfolio-reveal-bar`, children: [(0, Y.jsx)(`span`, { style: { fontSize: `0.8rem`, color: `rgba(255,255,255,0.75)`, textTransform: `uppercase`, letterSpacing: `0.06em` }, children: e.category }), (0, Y.jsx)(`div`, { style: { width: `32px`, height: `32px`, borderRadius: `50%`, background: `rgba(255,255,255,0.12)`, display: `flex`, alignItems: `center`, justifyContent: `center`, backdropFilter: `blur(6px)`, border: `1px solid rgba(255,255,255,0.15)` }, children: (0, Y.jsx)(Ym, { size: 14, color: `white` }) })] })] }), (0, Y.jsxs)(`div`, { className: `portfolio-meta`, children: [(0, Y.jsx)(`h3`, { className: `portfolio-title`, children: e.title }), (0, Y.jsx)(`div`, { style: { color: `var(--colors--gray-muted)`, fontSize: `0.9rem` }, children: String(t + 1).padStart(2, `0`) })] })] }); return (0, Y.jsx)(Z.div, { variants: bh, children: (0, Y.jsx)(zn, { to: `/work/${e.slug}`, className: `portfolio-card`, "aria-label": `View ${e.title}`, children: n }) }, e.slug) }) })] }) }), Sh = [.25, .46, .45, .94], Ch = { hidden: {}, show: { transition: { staggerChildren: .06, delayChildren: .02 } } }, wh = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: .32, ease: Sh } } }, Th = [{ label: `Graphic Design`, slugs: [`graphics-designs`, `real-estate-design`, `law-firm`, `real-estate`], isWebsite: !1 }, { label: `Websites`, slugs: [`lumora`, `district-11`, `portfolio`, `velore`], isWebsite: !0 }, { label: `Brand Identity`, slugs: [`gutsu`, `gutsu-dessert`, `zyft`, `greyline`], isWebsite: !1 }], Eh = [`big-rooster`, `1718-packaging`, `specmedia`], Dh = [`ai-videos`]; function Oh(e) { return e.map(e => gh.find(t => t.slug === e)).filter(e => e !== void 0) } function kh({ work: e, isWebsite: t, index: n }) { let r = (0, Y.jsxs)(`div`, { className: `more-works-thumb`, children: [(0, Y.jsx)(`img`, { src: e.thumbnail, alt: e.title, loading: `lazy` }), (0, Y.jsx)(`div`, { className: `more-works-overlay`, children: t ? (0, Y.jsxs)(`div`, { className: `mw-visit-text`, children: [`Visit Website `, (0, Y.jsx)(Ym, { size: 14 })] }) : (0, Y.jsx)(`div`, { className: `more-works-overlay-icon`, children: (0, Y.jsx)(Ym, { size: 20, color: `white` }) }) })] }), i = (0, Y.jsxs)(`div`, { className: `more-works-meta`, children: [(0, Y.jsxs)(`div`, { children: [(0, Y.jsx)(`div`, { className: `more-works-title`, children: e.title }), (0, Y.jsx)(`div`, { className: `more-works-cat`, children: e.category })] }), (0, Y.jsx)(`span`, { className: `more-works-year`, children: String(n).padStart(2, `0`) })] }); return t && e.externalUrl ? (0, Y.jsxs)(`a`, { href: e.externalUrl, target: `_blank`, rel: `noopener noreferrer`, className: `more-works-card`, "aria-label": `Visit ${e.title}`, children: [r, i] }) : (0, Y.jsxs)(zn, { to: `/work/${e.slug}`, className: `more-works-card`, "aria-label": `View ${e.title}`, children: [r, i] }) } var Ah = () => { let e = Oh(Eh), t = Oh(Dh), n = [...Th.flatMap(e => e.slugs), ...Eh, ...Dh], r = Object.fromEntries(n.map((e, t) => [e, t + 1])); return (0, Y.jsx)(`section`, { className: `more-works-section section-light`, children: (0, Y.jsxs)(`div`, { className: `container`, children: [(0, Y.jsxs)(Z.div, { className: `more-works-header`, initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: !0, amount: .4 }, transition: { duration: .5, ease: Sh }, children: [(0, Y.jsxs)(`div`, { style: { display: `flex`, alignItems: `center`, gap: `8px` }, children: [(0, Y.jsx)(`span`, { className: `section-accent-dot`, children: `✦` }), (0, Y.jsx)(`span`, { className: `top-text`, children: `All Projects` })] }), (0, Y.jsxs)(`div`, { style: { display: `flex`, alignItems: `baseline`, justifyContent: `space-between`, flexWrap: `wrap`, gap: `1rem`, marginTop: `1.25rem` }, children: [(0, Y.jsx)(`h2`, { className: `h2`, style: { fontSize: `clamp(2rem, 5vw, 4rem)`, textTransform: `uppercase`, letterSpacing: `-0.03em` }, children: `View More Works` }), (0, Y.jsx)(`p`, { className: `card-text rl`, style: { opacity: .5, maxWidth: `320px` }, children: `Every project, every detail — browse the full archive.` })] })] }), Th.map(e => { let t = Oh(e.slugs); return (0, Y.jsxs)(`div`, { className: `mw-category`, children: [(0, Y.jsx)(Z.p, { className: `mw-cat-label`, initial: { opacity: 0, y: 6 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: !0, amount: .5 }, transition: { duration: .28, ease: Sh }, children: e.label }), (0, Y.jsx)(Z.div, { className: `mw-cat-grid`, variants: Ch, initial: `hidden`, whileInView: `show`, viewport: { once: !0, amount: .05 }, children: t.map(t => (0, Y.jsx)(Z.div, { variants: wh, children: (0, Y.jsx)(kh, { work: t, isWebsite: e.isWebsite, index: r[t.slug] }) }, t.slug)) })] }, e.label) }), (0, Y.jsxs)(`div`, { className: `mw-split-row`, children: [(0, Y.jsxs)(`div`, { className: `mw-split-left`, children: [(0, Y.jsx)(Z.p, { className: `mw-cat-label`, initial: { opacity: 0, y: 6 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: !0, amount: .5 }, transition: { duration: .28, ease: Sh }, children: `Branding & Packaging` }), (0, Y.jsx)(Z.div, { className: `mw-cat-grid`, variants: Ch, initial: `hidden`, whileInView: `show`, viewport: { once: !0, amount: .05 }, children: e.map(e => (0, Y.jsx)(Z.div, { variants: wh, children: (0, Y.jsx)(kh, { work: e, isWebsite: !1, index: r[e.slug] }) }, e.slug)) })] }), (0, Y.jsx)(`div`, { className: `mw-split-divider` }), (0, Y.jsxs)(`div`, { className: `mw-split-right`, children: [(0, Y.jsx)(Z.p, { className: `mw-cat-label`, initial: { opacity: 0, y: 6 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: !0, amount: .5 }, transition: { duration: .28, ease: Sh }, children: `AI Videos` }), (0, Y.jsx)(Z.div, { variants: Ch, initial: `hidden`, whileInView: `show`, viewport: { once: !0, amount: .05 }, children: t.map(e => (0, Y.jsx)(Z.div, { variants: wh, children: (0, Y.jsx)(kh, { work: e, isWebsite: !1, index: r[e.slug] }) }, e.slug)) })] })] })] }) }) }, jh = [{ num: `/001`, title: `Branding`, description: `Creating memorable visual identities from the ground up. Logo suites, core typography systems, brand guidelines, and visual standards that position your business for sustained growth and recognition.`, tags: [`Logo Design`, `Brand Identity`, `Style Guide`, `Print Assets`], image: `/images/Works/Gutsu/Main.webp` }, { num: `/002`, title: `Social Media Design`, description: `Creative campaigns that drive real user engagement. Custom graphic assets, ad templates, and motion-ready layout configurations built to stand out on competitive social timelines.`, tags: [`Campaign Graphics`, `Ad Templates`, `Content Systems`, `Reels Design`], image: `/images/services/social.webp` }, { num: `/003`, title: `Website Design & Dev`, description: `Modern, responsive digital experiences built to convert. High-performance websites crafted with clean code, SEO optimisation, and polished UI animations that make lasting impressions.`, tags: [`UI Design`, `React / Next.js`, `SEO`, `Animations`], image: `/images/Works/District 11/District-11-—-Creative-Agency-Dubai-Branding-Marketing-Web-Design (2).webp` }, { num: `/004`, title: `AI Content Production`, description: `High-quality AI-generated visuals and cinematic video content. Advanced generative workflows, prompt engineering, and visual automation to produce premium campaign material rapidly.`, tags: [`Midjourney`, `AI Video`, `Prompt Engineering`, `Cinematic Output`], image: `/images/services/ai.jpg` }, { num: `/005`, title: `Creative Consulting`, description: `Helping ambitious brands leverage AI and design effectively. Streamlining creative workflows, introducing modern production tools, and mapping long-term digital strategies for sustainable impact.`, tags: [`Strategy`, `AI Integration`, `Workflow Design`, `Brand Roadmap`], image: `/images/Works/Portfolio/Main.webp` }], Mh = () => { let e = (0, w.useRef)(null), t = (0, w.useRef)(null), n = (0, w.useRef)(null), [r, i] = (0, w.useState)(1200); (0, w.useEffect)(() => { jh.forEach(e => { let t = new Image; t.src = e.image }) }, []), (0, w.useLayoutEffect)(() => { let e = () => { if (!t.current) return; i(Math.max(t.current.scrollWidth - window.innerWidth, 0)); let e = n.current; if (e) { let t = e.querySelector(`.svc-h-header`), n = e.querySelector(`.svc-h-viewport`), r = e.querySelector(`.svc-card-h`); if (t && n && r) { let e = parseFloat(getComputedStyle(n).paddingTop) || 64, i = t.offsetHeight + e + r.offsetHeight; document.documentElement.style.setProperty(`--svc-content-h`, `${i}px`) } } }; return e(), window.addEventListener(`resize`, e), () => window.removeEventListener(`resize`, e) }, []); let { scrollYProgress: a } = Tm({ target: e, offset: [`start start`, `end end`] }), o = Nm(km(a, [0, 1], [0, -r]), { stiffness: 280, damping: 38, mass: .4, restDelta: .001 }); return (0, Y.jsx)(`div`, { id: `services`, ref: e, className: `svc-h-wrap`, style: { height: `calc(100vh + ${Math.round(r * .7)}px)` }, children: (0, Y.jsxs)(`div`, { ref: n, className: `svc-h-sticky`, children: [(0, Y.jsxs)(`div`, { className: `svc-h-header`, children: [(0, Y.jsxs)(`div`, { style: { display: `flex`, alignItems: `center`, gap: `8px` }, children: [(0, Y.jsx)(`span`, { className: `svc-h-dot`, children: `✦` }), (0, Y.jsx)(`span`, { className: `svc-h-label`, children: `Capabilities & Services` })] }), (0, Y.jsxs)(`div`, { className: `svc-h-title-row`, children: [(0, Y.jsxs)(`h2`, { className: `svc-h-title`, children: [`Services`, (0, Y.jsx)(`span`, { className: `svc-h-count`, children: `(05)` })] }), (0, Y.jsx)(`p`, { className: `svc-h-sub`, children: `Design, engineering, and AI — every service crafted to move the needle.` })] })] }), (0, Y.jsx)(`div`, { className: `svc-h-viewport`, children: (0, Y.jsx)(Z.div, { ref: t, className: `svc-h-track`, style: { x: o }, children: jh.map(e => (0, Y.jsxs)(`div`, { className: `svc-card-h`, children: [(0, Y.jsxs)(`div`, { className: `svc-card-h-img`, children: [(0, Y.jsx)(`img`, { src: e.image, alt: e.title, loading: `eager`, decoding: `async` }), (0, Y.jsx)(`span`, { className: `svc-card-h-num`, children: e.num })] }), (0, Y.jsxs)(`div`, { className: `svc-card-h-body`, children: [(0, Y.jsx)(`h3`, { className: `svc-card-h-title`, children: e.title }), (0, Y.jsx)(`p`, { className: `svc-card-h-desc`, children: e.description }), (0, Y.jsx)(`div`, { className: `svc-card-h-tags`, children: e.tags.map(e => (0, Y.jsx)(`span`, { className: `svc-card-h-tag`, children: e }, e)) })] })] }, e.num)) }) })] }) }) }, Nh = [.25, .46, .45, .94], Ph = { hidden: {}, show: { transition: { staggerChildren: .09, delayChildren: .05 } } }, Fh = { hidden: { opacity: 0, scale: .85, y: 30 }, show: { opacity: 1, scale: 1, y: 0, transition: { type: `spring`, stiffness: 290, damping: 22 } } }, Ih = ({ raw: e, label: t }) => { let n = (0, w.useRef)(null), r = Im(n, { once: !0, margin: `-60px` }), [i, a] = (0, w.useState)(`0`); return (0, w.useEffect)(() => { if (!r) return; let t = parseInt(e.replace(/\D/g, ``), 10); if (isNaN(t)) { a(e); return } let n = e.replace(/[0-9]/g, ``), i = 0, o = setInterval(() => { i++; let e = 1 - (1 - i / 108) ** 3; a(`${Math.round(e * t)}${n}`), i >= 108 && clearInterval(o) }, 1e3 / 60); return () => clearInterval(o) }, [r, e]), (0, Y.jsxs)(`div`, { ref: n, className: `stat-cell`, children: [(0, Y.jsx)(Z.span, { className: `stat-number`, initial: { opacity: 0, y: 20 }, animate: r ? { opacity: 1, y: 0 } : {}, transition: { duration: .6, ease: Nh }, children: i }), (0, Y.jsx)(`span`, { className: `stat-label`, children: t })] }) }, Lh = () => { let e = [{ title: `Creative + Technical`, text: `Design and front-end development integrated seamlessly. I build exactly what I design, avoiding communication gaps and preserving pixel-perfection.`, icon: (0, Y.jsx)(Xm, { className: `why-icon` }) }, { title: `AI-Powered Workflow`, text: `Integrating advanced neural generation pipelines to automate production, speed up prototyping, and deliver premium content in a fraction of the time.`, icon: (0, Y.jsx)(eh, { className: `why-icon` }) }, { title: `Strategy-Driven`, text: `Design is never purely aesthetic. Every interface choice, grid layout, and branding asset is crafted to support a specific business target or user action.`, icon: (0, Y.jsx)($m, { className: `why-icon` }) }, { title: `Multi-Disciplinary`, text: `From brand architectures and mobile UI kits to responsive frontend websites and cinematic AI campaigns — comprehensive digital creation under one roof.`, icon: (0, Y.jsx)(Qm, { className: `why-icon` }) }]; return (0, Y.jsx)(`section`, { className: `why-section section-light`, children: (0, Y.jsxs)(`div`, { className: `container`, children: [(0, Y.jsxs)(Z.div, { style: { display: `flex`, justifyContent: `space-between`, alignItems: `center`, marginBottom: `2rem` }, initial: { opacity: 0, scale: .94, y: 16 }, whileInView: { opacity: 1, scale: 1, y: 0 }, viewport: { once: !0, amount: .4 }, transition: { type: `spring`, stiffness: 300, damping: 24 }, children: [(0, Y.jsxs)(`div`, { style: { display: `flex`, alignItems: `center`, gap: `8px` }, children: [(0, Y.jsx)(`span`, { className: `section-accent-dot`, children: `✦` }), (0, Y.jsx)(`span`, { className: `top-text`, children: `Why Choose Abhinav R` })] }), (0, Y.jsx)(`div`, { className: `top-text gray`, children: `Edition 05` })] }), (0, Y.jsxs)(Z.div, { className: `margin-30`, style: { display: `flex`, justifyContent: `space-between`, alignItems: `baseline`, flexWrap: `wrap`, gap: `1rem` }, initial: { opacity: 0, scale: .91, y: 24 }, whileInView: { opacity: 1, scale: 1, y: 0 }, viewport: { once: !0, amount: .3 }, transition: { type: `spring`, stiffness: 280, damping: 24, delay: .07 }, children: [(0, Y.jsx)(`h2`, { className: `h2`, style: { fontSize: `clamp(2rem, 5vw, 4rem)`, textTransform: `uppercase`, letterSpacing: `-0.03em` }, children: `Why Work With Me` }), (0, Y.jsx)(`p`, { className: `card-text rl`, style: { opacity: .6, maxWidth: `400px` }, children: `Bringing ideas to life using a unique blend of core design rules and futuristic AI systems.` })] }), (0, Y.jsx)(Z.div, { className: `why-grid`, variants: Ph, initial: `hidden`, whileInView: `show`, viewport: { once: !0, amount: .15 }, children: e.map((e, t) => (0, Y.jsxs)(Z.div, { className: `why-card`, variants: Fh, whileHover: { y: -6, transition: { duration: .25 } }, children: [(0, Y.jsx)(`div`, { className: `why-icon-wrap`, children: e.icon }), (0, Y.jsx)(`h3`, { className: `why-title`, children: e.title }), (0, Y.jsx)(`p`, { className: `why-text`, children: e.text })] }, t)) }), (0, Y.jsx)(`div`, { className: `stats-row`, children: [{ raw: `100+`, label: `Creative Projects` }, { raw: `50+`, label: `Brands Partnered` }, { raw: `4+`, label: `Years Experience` }, { raw: `Multi`, label: `Industries Served` }].map((e, t) => (0, Y.jsx)(Ih, { raw: e.raw, label: e.label }, t)) })] }) }) }, Rh = [.25, .46, .45, .94], zh = ({ bg: e = `#fff`, children: t }) => (0, Y.jsxs)(`svg`, { viewBox: `0 0 48 48`, width: `48`, height: `48`, style: { flexShrink: 0 }, children: [(0, Y.jsx)(`rect`, { width: `48`, height: `48`, rx: `11`, fill: e }), t] }), Bh = ({ src: e, alt: t, bg: n = `#fff` }) => (0, Y.jsx)(`div`, { style: { width: 48, height: 48, borderRadius: 11, background: n, display: `flex`, alignItems: `center`, justifyContent: `center`, flexShrink: 0, overflow: `hidden` }, children: (0, Y.jsx)(`img`, { src: e, alt: t, style: { width: 36, height: 36, objectFit: `contain` } }) }), Vh = [
   {
-    name: "Python",
-    desc: "AI & ML, Scripting",
-    category: "Languages",
-    icon: (0, Y.jsx)(zh, { bg: "#3776AB", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFD43B", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Py" }) })
+    name: "Adobe Photoshop",
+    desc: "Design, Photo Retouch",
+    category: "Design",
+    icon: (0, Y.jsx)(zh, { bg: "#001E36", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#31A8FF", fontSize: "18", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Ps" }) })
   },
   {
-    name: "JavaScript / TypeScript",
-    desc: "React, Web logic",
-    category: "Languages",
-    icon: (0, Y.jsx)(zh, { bg: "#3178C6", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "TS" }) })
+    name: "Adobe Illustrator",
+    desc: "Design, Vector Art",
+    category: "Design",
+    icon: (0, Y.jsx)(zh, { bg: "#330000", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FF9A00", fontSize: "18", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Ai" }) })
   },
   {
-    name: "C / C++",
-    desc: "Systems Programming",
-    category: "Languages",
-    icon: (0, Y.jsx)(zh, { bg: "#00599C", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "C++" }) })
+    name: "Google Stitch",
+    desc: "UI/UX Designing",
+    category: "UI/UX",
+    icon: (0, Y.jsx)(Bh, { src: "./images/tools/stitch.jpg", alt: "Google Stitch", bg: "#1E1E1E" })
   },
   {
-    name: "SQL",
-    desc: "Database Queries",
-    category: "Languages",
-    icon: (0, Y.jsx)(zh, { bg: "#336791", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "SQL" }) })
+    name: "Figma",
+    desc: "UI/UX Designing",
+    category: "UI/UX",
+    icon: (0, Y.jsx)(zh, { bg: "#1E1E1E", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#F24E1E", fontSize: "18", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Fg" }) })
   },
   {
-    name: "Java",
-    desc: "Backend Logic",
-    category: "Languages",
-    icon: (0, Y.jsx)(zh, { bg: "#007396", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "14", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Java" }) })
+    name: "Google Nano Banana Pro",
+    desc: "AI Video & Image Gen",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(Bh, { src: "./images/tools/nanobanana.svg", alt: "Google Nano Banana Pro", bg: "#1E1E1E" })
   },
   {
-    name: "Scikit-Learn",
-    desc: "Machine Learning Models",
-    category: "AI/ML & Libraries",
-    icon: (0, Y.jsx)(zh, { bg: "#F7931E", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Sk" }) })
+    name: "Freepik AI Suite",
+    desc: "AI Creative Platform",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#0B57D0", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Fk" }) })
   },
   {
-    name: "Pandas",
-    desc: "Data Analysis",
-    category: "AI/ML & Libraries",
-    icon: (0, Y.jsx)(zh, { bg: "#150458", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Pd" }) })
+    name: "Higgsfield AI",
+    desc: "AI Video Generation",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#B5FF00", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#000", fontSize: "18", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Hf" }) })
   },
   {
-    name: "NumPy",
-    desc: "Numerical Computing",
-    category: "AI/ML & Libraries",
-    icon: (0, Y.jsx)(zh, { bg: "#013243", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Num" }) })
+    name: "Kling AI",
+    desc: "AI Video Generation",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#111111", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Kl" }) })
   },
   {
-    name: "Matplotlib",
-    desc: "Data Visualization",
-    category: "AI/ML & Libraries",
-    icon: (0, Y.jsx)(zh, { bg: "#11557c", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Plt" }) })
+    name: "Seedance 2.0",
+    desc: "AI Video Creation",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#0F172A", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#38BDF8", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Sd" }) })
   },
   {
-    name: "React",
-    desc: "Web Frontend Library",
-    category: "Web Development",
-    icon: (0, Y.jsx)(zh, { bg: "#20232A", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#61DAFB", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Re" }) })
+    name: "Google Omni",
+    desc: "Multimodal AI",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#4285F4", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Om" }) })
   },
   {
-    name: "HTML / CSS",
-    desc: "Layout and Styling",
-    category: "Web Development",
-    icon: (0, Y.jsx)(zh, { bg: "#E34F26", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "14", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Web" }) })
+    name: "ChatGPT Imagen 2.0",
+    desc: "AI Image Generation",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#10A37F", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "14", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "GPT" }) })
   },
   {
-    name: "Node.js",
-    desc: "Server-side JavaScript",
-    category: "Web Development",
-    icon: (0, Y.jsx)(zh, { bg: "#339933", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "14", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Node" }) })
+    name: "Midjourney",
+    desc: "AI Image Generation",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#000000", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Mj" }) })
   },
   {
-    name: "Git & GitHub",
-    desc: "Version Control",
-    category: "Tools & Platforms",
-    icon: (0, Y.jsx)(zh, { bg: "#F05032", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "14", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Git" }) })
+    name: "DALL-E",
+    desc: "AI Image Generation",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#000000", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "DE" }) })
   },
   {
-    name: "Google AI Studio",
-    desc: "Generative AI APIs",
-    category: "Tools & Platforms",
-    icon: (0, Y.jsx)(Bh, { src: "./images/tools/antigravity.webp", alt: "Google AI Studio", bg: "#fff" })
+    name: "Adobe Firefly",
+    desc: "AI Creative Suite",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#FF0000", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Ff" }) })
+  },
+  {
+    name: "Canva",
+    desc: "Design & AI Creation",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#00C4CC", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Cv" }) })
+  },
+  {
+    name: "Affinity",
+    desc: "Design Suite",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#22B573", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Af" }) })
+  },
+  {
+    name: "Sora",
+    desc: "AI Video Generation",
+    category: "AI Creation",
+    icon: (0, Y.jsx)(zh, { bg: "#10A37F", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "Sr" }) })
+  },
+  {
+    name: "Google Antigravity",
+    desc: "AI Generation",
+    category: "AI & Coding",
+    icon: (0, Y.jsx)(Bh, { src: "./images/tools/antigravity.webp", alt: "Google Antigravity", bg: "#fff" })
+  },
+  {
+    name: "Claude Code",
+    desc: "AI Engineering",
+    category: "AI & Coding",
+    icon: (0, Y.jsx)(Bh, { src: "./images/tools/claude.png", alt: "Claude Code", bg: "#D97757" })
   },
   {
     name: "VS Code",
-    desc: "Development IDE",
-    category: "Tools & Platforms",
-    icon: (0, Y.jsx)(zh, { bg: "#007ACC", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#fff", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "VS" }) })
+    desc: "Code Editor",
+    category: "AI & Coding",
+    icon: (0, Y.jsx)(zh, { bg: "#007ACC", children: (0, Y.jsx)("text", { x: "24", y: "32", textAnchor: "middle", fill: "#FFF", fontSize: "16", fontWeight: "800", fontFamily: "Arial, sans-serif", children: "VS" }) })
   }
 ], Hh = { hidden: {}, show: { transition: { staggerChildren: .04, delayChildren: .04 } } }, Uh = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: .28, ease: Rh } } }, Wh = () => (0, Y.jsx)(`section`, { className: `tool-stack-section section-light`, children: (0, Y.jsxs)(`div`, { className: `container`, children: [(0, Y.jsxs)(Z.div, { style: { display: `flex`, alignItems: `center`, gap: `8px`, marginBottom: `2rem` }, initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: !0, amount: .1 }, transition: { duration: .3, ease: Rh }, children: [(0, Y.jsx)(`span`, { className: `section-accent-dot`, children: `✦` }), (0, Y.jsx)(`span`, { className: `top-text`, children: `Tools & Software Stack` })] }), (0, Y.jsxs)(Z.div, { style: { display: `flex`, justifyContent: `space-between`, alignItems: `baseline`, flexWrap: `wrap`, gap: `1rem`, marginBottom: `2.5rem` }, initial: { opacity: 0, y: 14 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: !0, amount: .1 }, transition: { duration: .32, ease: Rh, delay: .04 }, children: [(0, Y.jsx)(`h2`, { className: `h2`, style: { fontSize: `clamp(1.8rem, 4vw, 3rem)`, textTransform: `uppercase`, letterSpacing: `-0.03em` }, children: `Software I Use` }), (0, Y.jsx)(`p`, { className: `card-text rl`, style: { opacity: .55, maxWidth: `360px` }, children: `My creative stack spans design, UI, and advanced AI tooling for end-to-end production.` })] }), (0, Y.jsx)(Z.div, { className: `tool-stack-card`, initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: !0, amount: .08 }, transition: { duration: .38, ease: Rh }, children: [{ label: `Design`, items: Vh.filter(e => e.category === `Design`) }, { label: `UI / UX`, items: Vh.filter(e => e.category === `UI/UX`) }, { label: `AI Creation`, items: Vh.filter(e => e.category === `AI Creation`) }, { label: `AI & Coding`, items: Vh.filter(e => e.category === `AI & Coding`) }].map(({ label: e, items: t }) => (0, Y.jsxs)(`div`, { className: `tool-category-row`, children: [(0, Y.jsx)(`span`, { className: `tool-category-label`, children: e }), (0, Y.jsx)(Z.div, { className: `tool-items-row`, variants: Hh, initial: `hidden`, whileInView: `show`, viewport: { once: !0, amount: .3 }, children: t.map((e, t) => (0, Y.jsxs)(Z.div, { className: `tool-item`, variants: Uh, whileHover: { scale: 1.03, transition: { duration: .22 } }, children: [(0, Y.jsx)(`div`, { className: `tool-icon-wrap`, children: e.icon }), (0, Y.jsxs)(`div`, { className: `tool-info`, children: [(0, Y.jsx)(`span`, { className: `tool-name`, children: e.name }), (0, Y.jsx)(`span`, { className: `tool-desc`, children: e.desc })] })] }, t)) })] }, e)) })] }) }), Gh = [.25, .46, .45, .94], Kh = [
   {
